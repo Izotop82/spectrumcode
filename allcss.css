@@ -1,13 +1,13 @@
 @font-face {
-            font-family: 'Gilroy';
-            src: url('https://fonts.googleapis.com/css2?family=Gilroy&display=swap');
+            font-family: 'Rubik';
+            src: url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Gilroy', sans-serif;
+            font-family: 'Rubik', sans-serif;
         }
         
         body {
@@ -617,4 +617,5 @@
             .to-top span {
             font-size: 24px;
             line-height: 1;
+
             }
