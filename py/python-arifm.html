@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Арифметические операции | SPECTRUM</title>
+    <link rel="stylesheet" href="allcss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <style>
+        .code-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        .code-result {
+            display: none;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 0 0 5px 5px;
+            border-left: 4px solid #40bfef;
+            margin-top: -5px;
+        }
+        .show-result-btn {
+            background-color: #4f4796;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        .show-result-btn:hover {
+            background-color: #001f56;
+        }
+        .task-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #40bfef;
+        }
+        .task-card h4 {
+            color: #001f56;
+            margin-bottom: 10px;
+        }
+        pre {
+            border-radius: 5px;
+            padding: 15px !important;
+        }
+        .theory-block {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        .theory-block h3 {
+            color: #4f4796;
+            margin-bottom: 15px;
+        }
+        .operation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .operation-table th, .operation-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .operation-table th {
+            background-color: #001f56;
+            color: white;
+        }
+        .operation-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .operation-table tr:hover {
+            background-color: #e6f7ff;
+        }
+        .priority-list {
+            list-style-type: none;
+            counter-reset: priority-counter;
+            padding-left: 0;
+        }
+        .priority-list li {
+            counter-increment: priority-counter;
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .priority-list li:before {
+            content: counter(priority-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #40bfef;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 22px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="SPECTRUM" height="70"></a>
+                <a href="index.html"><span class="logo-text">SPECTRUM</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#courses">Направления</a></li>
+                    <li><a href="index.html#lab">Лаборатория</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Заголовок курса -->
+    <section class="course-header">
+        <div class="container">
+            <h1>Python: Арифметические операции</h1>
+            <p>Основные математические операции и их приоритеты в языке Python</p>
+        </div>
+    </section>
+
+    <!-- Основное содержание -->
+    <section class="course-page">
+        <div class="container">
+            <div class="course-details">
+                <div class="course-main">
+                    <h2>Арифметические операции в Python</h2>
+                    <p>Python поддерживает все основные математические операции, которые можно использовать в вычислениях. Давайте изучим их подробнее.</p>
+                    
+                    <div class="theory-block">
+                        <h3>Базовые арифметические операции</h3>
+                        <p>В Python есть 7 основных арифметических операций:</p>
+                        
+                        <table class="operation-table">
+                            <tr>
+                                <th>Операция</th>
+                                <th>Оператор</th>
+                                <th>Пример</th>
+                                <th>Результат</th>
+                            </tr>
+                            <tr>
+                                <td>Сложение</td>
+                                <td>+</td>
+                                <td>5 + 3</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>Вычитание</td>
+                                <td>-</td>
+                                <td>10 - 4</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>Умножение</td>
+                                <td>*</td>
+                                <td>6 * 7</td>
+                                <td>42</td>
+                            </tr>
+                            <tr>
+                                <td>Деление</td>
+                                <td>/</td>
+                                <td>15 / 4</td>
+                                <td>3.75</td>
+                            </tr>
+                            <tr>
+                                <td>Целочисленное деление</td>
+                                <td>//</td>
+                                <td>15 // 4</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Остаток от деления</td>
+                                <td>%</td>
+                                <td>15 % 4</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Возведение в степень</td>
+                                <td>**</td>
+                                <td>2 ** 3</td>
+                                <td>8</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="code-container" style="margin-top: 20px;">
+                            <pre><code class="language-python"># Примеры всех операций
+a = 15
+b = 4
+
+print("Сложение:", a + b)
+print("Вычитание:", a - b)
+print("Умножение:", a * b)
+print("Деление:", a / b)
+print("Целочисленное деление:", a // b)
+print("Остаток от деления:", a % b)
+print("Возведение в степень:", a ** 2)</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result1')">Показать результат</button>
+                            <div class="code-result" id="result1">
+                                Сложение: 19<br>
+                                Вычитание: 11<br>
+                                Умножение: 60<br>
+                                Деление: 3.75<br>
+                                Целочисленное деление: 3<br>
+                                Остаток от деления: 3<br>
+                                Возведение в степень: 225
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Приоритет операций</h3>
+                        <p>Операции выполняются в определенном порядке (приоритете):</p>
+                        
+                        <ol class="priority-list">
+                            <li><strong>Скобки ()</strong> - имеют наивысший приоритет</li>
+                            <li><strong>Возведение в степень **</strong></li>
+                            <li><strong>Умножение *, деление /, целочисленное деление //, остаток %</strong> (одинаковый приоритет, выполняются слева направо)</li>
+                            <li><strong>Сложение + и вычитание -</strong> (наинизший приоритет, выполняются слева направо)</li>
+                        </ol>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># Примеры с разным приоритетом
+print(2 + 3 * 4)       # Сначала умножение
+print((2 + 3) * 4)      # Сначала скобки
+print(2 ** 3 * 4)       # Сначала степень
+print(10 / 2 * 3)       # Одинаковый приоритет - слева направо
+print(10 % 3 ** 2)      # Сначала степень, потом остаток</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result2')">Показать результат</button>
+                            <div class="code-result" id="result2">
+                                14<br>
+                                20<br>
+                                32<br>
+                                15.0<br>
+                                1
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Сокращенные операции присваивания</h3>
+                        <p>Python поддерживает сокращенные формы записи арифметических операций с присваиванием:</p>
+                        
+                        <table class="operation-table">
+                            <tr>
+                                <th>Полная форма</th>
+                                <th>Сокращенная форма</th>
+                            </tr>
+                            <tr>
+                                <td>x = x + 5</td>
+                                <td>x += 5</td>
+                            </tr>
+                            <tr>
+                                <td>x = x - 3</td>
+                                <td>x -= 3</td>
+                            </tr>
+                            <tr>
+                                <td>x = x * 2</td>
+                                <td>x *= 2</td>
+                            </tr>
+                            <tr>
+                                <td>x = x / 4</td>
+                                <td>x /= 4</td>
+                            </tr>
+                            <tr>
+                                <td>x = x // 2</td>
+                                <td>x //= 2</td>
+                            </tr>
+                            <tr>
+                                <td>x = x % 3</td>
+                                <td>x %= 3</td>
+                            </tr>
+                            <tr>
+                                <td>x = x ** 2</td>
+                                <td>x **= 2</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="code-container" style="margin-top: 20px;">
+                            <pre><code class="language-python"># Примеры сокращенных операций
+x = 10
+x += 5   # x = x + 5
+print("После += 5:", x)
+
+y = 20
+y //= 3  # y = y // 3
+print("После //= 3:", y)
+
+z = 2
+z **= 4  # z = z ** 4
+print("После **= 4:", z)</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result3')">Показать результат</button>
+                            <div class="code-result" id="result3">
+                                После += 5: 15<br>
+                                После //= 3: 6<br>
+                                После **= 4: 16
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 style="margin-top: 40px;">Практические задания</h2>
+                    
+                    <div class="task-card">
+                        <h4>Задание 1: Калькулятор площади</h4>
+                        <p>Напишите программу, которая запрашивает у пользователя длину и ширину прямоугольника, а затем вычисляет и выводит его площадь и периметр.</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution1')">Показать решение</button>
+                        <div class="code-result" id="solution1">
+                            <pre><code class="language-python">length = float(input("Введите длину прямоугольника: "))
+width = float(input("Введите ширину прямоугольника: "))
+
+area = length * width
+perimeter = 2 * (length + width)
+
+print(f"Площадь: {area}")
+print(f"Периметр: {perimeter}")</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card">
+                        <h4>Задание 2: Конвертер секунд</h4>
+                        <p>Напишите программу, которая преобразует введенное пользователем количество секунд в часы, минуты и секунды (например, 4000 секунд = 1 час 6 минут 40 секунд).</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution2')">Показать решение</button>
+                        <div class="code-result" id="solution2">
+                            <pre><code class="language-python">seconds = int(input("Введите количество секунд: "))
+
+hours = seconds // 3600
+remaining_seconds = seconds % 3600
+minutes = remaining_seconds // 60
+seconds = remaining_seconds % 60
+
+print(f"{hours} час(а/ов), {minutes} минут(а/ы), {seconds} секунд(а/ы)")</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card">
+                        <h4>Задание 3: Числовые операции</h4>
+                        <p>Напишите программу, которая запрашивает у пользователя два числа и выводит результаты всех семи арифметических операций с этими числами.</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution3')">Показать решение</button>
+                        <div class="code-result" id="solution3">
+                            <pre><code class="language-python">a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+
+print(f"{a} + {b} = {a + b}")
+print(f"{a} - {b} = {a - b}")
+print(f"{a} * {b} = {a * b}")
+print(f"{a} / {b} = {a / b}")
+print(f"{a} // {b} = {a // b}")
+print(f"{a} % {b} = {a % b}")
+print(f"{a} ** {b} = {a ** b}")</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-sidebar">
+                    <div class="course-sidebar-card">
+                        <h3>Материалы урока</h3>
+                        <ul class="features-list">
+                            <li>7 основных операций</li>
+                            <li>Приоритет операций</li>
+                            <li>Сокращенные операции</li>
+                            <li>Практические примеры</li>
+                        </ul>
+                        <div class="price">Бесплатный урок</div>
+                        <a href="#contacts" class="btn">Записаться на курс</a>
+                    </div>
+                    
+                    <div class="course-sidebar-card">
+                        <h3>Следующий урок</h3>
+                        <p><strong>Условные операторы</strong></p>
+                        <p>Научим программу принимать решения с помощью if-else</p>
+                        <a href="python-conditions.html" class="btn">Перейти</a>
+                    </div>
+                    
+                    <div class="course-sidebar-card">
+                        <h3>Полезные ссылки</h3>
+                        <ul class="features-list">
+                            <li><a href="https://python.org" target="_blank">Официальный сайт Python</a></li>
+                            <li><a href="https://pythontutor.ru" target="_blank">Учебник Python для начинающих</a></li>
+                            <li><a href="https://replit.com" target="_blank">Онлайн-редактор кода</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SPECTRUM</h3>
+                    <p>Школа PROграммирования для детей от 8 лет. Готовим к экзаменам и профессиональному будущему через практику и научную деятельность.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Направления</h3>
+                    <ul>
+                        <li><a href="scratch.html">Scratch</a></li>
+                        <li><a href="gamedev-2d.html">GameDev 1-lvl</a></li>
+                        <li><a href="gamedev-3d.html">GameDev 2-lvl</a></li>
+                        <li><a href="python-algo.html">Python алгоритмический</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>г. Новомосковск, ул. Калинина, 17а</li>
+                        <li>spectrum71@ro.ru</li>
+                        <li>+7(999)783-82-71</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://t.me/news_spectrum">📢</a>
+                        <a href="https://vk.com/prospectrum">👥</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 SPECTRUM - Школа программирования для детей. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="to-top" id="toTop">
+        <span>↑</span>
+    </a>
+
+    <!-- Подключение библиотек -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        // Подсветка синтаксиса
+        hljs.highlightAll();
+        
+        // Кнопка "Наверх"
+        window.addEventListener('scroll', function() {
+            const toTopButton = document.getElementById('toTop');
+            if (window.pageYOffset > 300) {
+                toTopButton.classList.add('visible');
+            } else {
+                toTopButton.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('toTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Показать/скрыть результаты
+        function toggleResult(id) {
+            const result = document.getElementById(id);
+            if (result.style.display === 'block') {
+                result.style.display = 'none';
+                event.target.textContent = 'Показать результат';
+            } else {
+                result.style.display = 'block';
+                event.target.textContent = 'Скрыть результат';
+            }
+        }
+    </script>
+</body>
+</html>

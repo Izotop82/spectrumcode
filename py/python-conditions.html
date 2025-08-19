@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Условные операторы | SPECTRUM</title>
+    <link rel="stylesheet" href="allcss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <style>
+        .code-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        .code-result {
+            display: none;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 0 0 5px 5px;
+            border-left: 4px solid #40bfef;
+            margin-top: -5px;
+        }
+        .show-result-btn {
+            background-color: #4f4796;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        .show-result-btn:hover {
+            background-color: #001f56;
+        }
+        .task-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #40bfef;
+        }
+        .task-card h4 {
+            color: #001f56;
+            margin-bottom: 10px;
+        }
+        pre {
+            border-radius: 5px;
+            padding: 15px !important;
+        }
+        .theory-block {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        .theory-block h3 {
+            color: #4f4796;
+            margin-bottom: 15px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table th {
+            background-color: #001f56;
+            color: white;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .comparison-table tr:hover {
+            background-color: #e6f7ff;
+        }
+        .flowchart {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .flowchart img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .note-box {
+            background-color: #e6f7ff;
+            border-left: 4px solid #40bfef;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="SPECTRUM" height="70"></a>
+                <a href="index.html"><span class="logo-text">SPECTRUM</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#courses">Направления</a></li>
+                    <li><a href="index.html#lab">Лаборатория</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Заголовок курса -->
+    <section class="course-header">
+        <div class="container">
+            <h1>Python: Условные операторы</h1>
+            <p>Принимаем решения в программах с помощью if, elif и else</p>
+        </div>
+    </section>
+
+    <!-- Основное содержание -->
+    <section class="course-page">
+        <div class="container">
+            <div class="course-details">
+                <div class="course-main">
+                    <h2>Условные операторы в Python</h2>
+                    <p>Условные операторы позволяют программе принимать решения и выполнять разные действия в зависимости от условий.</p>
+                    
+                    <div class="theory-block">
+                        <h3>Оператор if (если)</h3>
+                        <p>Блок кода после оператора <code>if</code> выполняется только если условие истинно (True).</p>
+                        
+                        <div class="flowchart">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/If-Then-Else-diagram.svg/500px-If-Then-Else-diagram.svg.png" alt="Блок-схема условного оператора" width="300">
+                        </div>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># Простой пример if
+age = 15
+
+if age >= 12:
+    print("Добро пожаловать в курс Python для 12-14 лет!")
+
+print("Программа завершена")</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result1')">Показать результат</button>
+                            <div class="code-result" id="result1">
+                                Добро пожаловать в курс Python для 12-14 лет!<br>
+                                Программа завершена
+                            </div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <strong>Обратите внимание:</strong> В Python важны отступы! Код, который должен выполняться при истинном условии, пишется с отступом в 4 пробела.
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Операторы else (иначе) и elif (иначе если)</h3>
+                        <p><code>else</code> позволяет выполнить код, если условие в <code>if</code> ложно (False).<br>
+                        <code>elif</code> (сокращение от "else if") позволяет проверять дополнительные условия.</p>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># Пример с else и elif
+score = 85
+
+if score >= 90:
+    print("Отличная работа! Оценка 5")
+elif score >= 70:
+    print("Хорошо! Оценка 4")
+elif score >= 50:
+    print("Удовлетворительно. Оценка 3")
+else:
+    print("Нужно подтянуть знания. Оценка 2")
+
+print("Проверка завершена")</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result2')">Показать результат</button>
+                            <div class="code-result" id="result2">
+                                Хорошо! Оценка 4<br>
+                                Проверка завершена
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Операторы сравнения</h3>
+                        <p>В условиях можно использовать различные операторы сравнения:</p>
+                        
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Оператор</th>
+                                <th>Значение</th>
+                                <th>Пример</th>
+                                <th>Результат</th>
+                            </tr>
+                            <tr>
+                                <td>==</td>
+                                <td>равно</td>
+                                <td>5 == 5</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>!=</td>
+                                <td>не равно</td>
+                                <td>5 != 3</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;</td>
+                                <td>больше</td>
+                                <td>5 > 3</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;</td>
+                                <td>меньше</td>
+                                <td>5 < 3</td>
+                                <td>False</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;=</td>
+                                <td>больше или равно</td>
+                                <td>5 >= 5</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;=</td>
+                                <td>меньше или равно</td>
+                                <td>5 <= 3</td>
+                                <td>False</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="code-container" style="margin-top: 20px;">
+                            <pre><code class="language-python"># Примеры операторов сравнения
+x = 10
+y = 7
+
+if x > y:
+    print("x больше y")
+    
+if x != y:
+    print("x не равно y")
+    
+if x % 2 == 0:
+    print("x четное число")</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result3')">Показать результат</button>
+                            <div class="code-result" id="result3">
+                                x больше y<br>
+                                x не равно y<br>
+                                x четное число
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Логические операторы</h3>
+                        <p>Для создания сложных условий используются логические операторы:</p>
+                        
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Оператор</th>
+                                <th>Значение</th>
+                                <th>Пример</th>
+                                <th>Результат</th>
+                            </tr>
+                            <tr>
+                                <td>and</td>
+                                <td>И (оба условия истинны)</td>
+                                <td>(5 > 3) and (2 < 4)</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>or</td>
+                                <td>ИЛИ (хотя бы одно условие истинно)</td>
+                                <td>(5 > 3) or (2 > 4)</td>
+                                <td>True</td>
+                            </tr>
+                            <tr>
+                                <td>not</td>
+                                <td>НЕ (инвертирует условие)</td>
+                                <td>not (5 > 3)</td>
+                                <td>False</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="code-container" style="margin-top: 20px;">
+                            <pre><code class="language-python"># Примеры логических операторов
+age = 13
+grade = 8
+
+if age >= 12 and grade >= 5:
+    print("Доступ разрешен")
+    
+if age < 10 or age > 15:
+    print("Не подходящий возраст")
+    
+if not (age == 12):
+    print("Вам не 12 лет")</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result4')">Показать результат</button>
+                            <div class="code-result" id="result4">
+                                Доступ разрешен<br>
+                                Вам не 12 лет
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 style="margin-top: 40px;">Практические задания</h2>
+                    
+                    <div class="task-card">
+                        <h4>Задание 1: Проверка числа</h4>
+                        <p>Напишите программу, которая запрашивает у пользователя число и выводит:<br>
+                        - "Четное положительное", если число четное и больше 0<br>
+                        - "Нечетное положительное", если число нечетное и больше 0<br>
+                        - "Четное отрицательное", если число четное и меньше 0<br>
+                        - "Нечетное отрицательное", если число нечетное и меньше 0<br>
+                        - "Это ноль", если число равно 0</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution1')">Показать решение</button>
+                        <div class="code-result" id="solution1">
+                            <pre><code class="language-python">num = int(input("Введите число: "))
+
+if num == 0:
+    print("Это ноль")
+elif num > 0:
+    if num % 2 == 0:
+        print("Четное положительное")
+    else:
+        print("Нечетное положительное")
+else:
+    if num % 2 == 0:
+        print("Четное отрицательное")
+    else:
+        print("Нечетное отрицательное")</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card">
+                        <h4>Задание 2: Калькулятор ИМТ</h4>
+                        <p>Напишите программу, которая вычисляет индекс массы тела (ИМТ = вес / рост²) и выводит:<br>
+                        - "Недостаточный вес", если ИМТ < 18.5<br>
+                        - "Нормальный вес", если 18.5 ≤ ИМТ < 25<br>
+                        - "Избыточный вес", если 25 ≤ ИМТ < 30<br>
+                        - "Ожирение", если ИМТ ≥ 30</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution2')">Показать решение</button>
+                        <div class="code-result" id="solution2">
+                            <pre><code class="language-python">weight = float(input("Введите ваш вес (кг): "))
+height = float(input("Введите ваш рост (м): "))
+
+bmi = weight / (height ** 2)
+
+if bmi < 18.5:
+    print(f"ИМТ: {bmi:.1f} - Недостаточный вес")
+elif 18.5 <= bmi < 25:
+    print(f"ИМТ: {bmi:.1f} - Нормальный вес")
+elif 25 <= bmi < 30:
+    print(f"ИМТ: {bmi:.1f} - Избыточный вес")
+else:
+    print(f"ИМТ: {bmi:.1f} - Ожирение")</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card">
+                        <h4>Задание 3: Проверка треугольника</h4>
+                        <p>Напишите программу, которая запрашивает длины трех сторон и определяет:<br>
+                        - Может ли существовать треугольник с такими сторонами (сумма любых двух сторон больше третьей)<br>
+                        - Является ли треугольник равносторонним (все стороны равны)<br>
+                        - Является ли треугольник равнобедренным (две стороны равны)<br>
+                        - Является ли треугольник разносторонним (все стороны разные)</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution3')">Показать решение</button>
+                        <div class="code-result" id="solution3">
+                            <pre><code class="language-python">a = float(input("Введите первую сторону: "))
+b = float(input("Введите вторую сторону: "))
+c = float(input("Введите третью сторону: "))
+
+if a + b > c and a + c > b and b + c > a:
+    print("Треугольник существует")
+    
+    if a == b == c:
+        print("Треугольник равносторонний")
+    elif a == b or a == c or b == c:
+        print("Треугольник равнобедренный")
+    else:
+        print("Треугольник разносторонний")
+else:
+    print("Треугольник не существует")</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-sidebar">
+                    <div class="course-sidebar-card">
+                        <h3>Материалы урока</h3>
+                        <ul class="features-list">
+                            <li>Операторы if, elif, else</li>
+                            <li>Операторы сравнения</li>
+                            <li>Логические операторы</li>
+                            <li>Вложенные условия</li>
+                        </ul>
+                        <div class="price">Бесплатный урок</div>
+                        <a href="#contacts" class="btn">Записаться на курс</a>
+                    </div>
+                    
+                    <div class="course-sidebar-card">
+                        <h3>Следующий урок</h3>
+                        <p><strong>Циклы в Python</strong></p>
+                        <p>Изучаем for для повторения действий</p>
+                        <a href="python-for.html" class="btn">Перейти</a>
+                    </div>
+                    
+                    <div class="course-sidebar-card">
+                        <h3>Полезные ссылки</h3>
+                        <ul class="features-list">
+                            <li><a href="https://python.org" target="_blank">Официальный сайт Python</a></li>
+                            <li><a href="https://pythontutor.ru" target="_blank">Учебник Python для начинающих</a></li>
+                            <li><a href="https://replit.com" target="_blank">Онлайн-редактор кода</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SPECTRUM</h3>
+                    <p>Школа PROграммирования для детей от 8 лет. Готовим к экзаменам и профессиональному будущему через практику и научную деятельность.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Направления</h3>
+                    <ul>
+                        <li><a href="scratch.html">Scratch</a></li>
+                        <li><a href="gamedev-2d.html">GameDev 1-lvl</a></li>
+                        <li><a href="gamedev-3d.html">GameDev 2-lvl</a></li>
+                        <li><a href="python-algo.html">Python алгоритмический</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>г. Новомосковск, ул. Калинина, 17а</li>
+                        <li>spectrum71@ro.ru</li>
+                        <li>+7(999)783-82-71</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://t.me/news_spectrum">📢</a>
+                        <a href="https://vk.com/prospectrum">👥</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 SPECTRUM - Школа программирования для детей. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="to-top" id="toTop">
+        <span>↑</span>
+    </a>
+
+    <!-- Подключение библиотек -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        // Подсветка синтаксиса
+        hljs.highlightAll();
+        
+        // Кнопка "Наверх"
+        window.addEventListener('scroll', function() {
+            const toTopButton = document.getElementById('toTop');
+            if (window.pageYOffset > 300) {
+                toTopButton.classList.add('visible');
+            } else {
+                toTopButton.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('toTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Показать/скрыть результаты
+        function toggleResult(id) {
+            const result = document.getElementById(id);
+            if (result.style.display === 'block') {
+                result.style.display = 'none';
+                event.target.textContent = 'Показать результат';
+            } else {
+                result.style.display = 'block';
+                event.target.textContent = 'Скрыть результат';
+            }
+        }
+    </script>
+</body>
+</html>

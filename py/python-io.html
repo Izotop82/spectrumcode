@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Ввод и вывод данных | SPECTRUM</title>
+    <link rel="stylesheet" href="allcss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <style>
+        .code-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        .code-result {
+            display: none;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 0 0 5px 5px;
+            border-left: 4px solid #40bfef;
+            margin-top: -5px;
+        }
+        .show-result-btn {
+            background-color: #4f4796;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        .show-result-btn:hover {
+            background-color: #001f56;
+        }
+        .task-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #40bfef;
+        }
+        .task-card h4 {
+            color: #001f56;
+            margin-bottom: 10px;
+        }
+        pre {
+            border-radius: 5px;
+            padding: 15px !important;
+        }
+        .theory-block {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        .theory-block h3 {
+            color: #4f4796;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="SPECTRUM" height="70"></a>
+                <a href="index.html"><span class="logo-text">SPECTRUM</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#courses">Направления</a></li>
+                    <li><a href="index.html#lab">Лаборатория</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Заголовок курса -->
+    <section class="course-header">
+        <div class="container">
+            <h1>Python: Ввод и вывод данных</h1>
+            <p>Основы работы с вводом данных от пользователя и выводом информации на экран</p>
+        </div>
+    </section>
+
+    <!-- Основное содержание -->
+    <section class="course-page">
+        <div class="container">
+            <div class="course-details">
+                <div class="course-main">
+                    <h2>Ввод и вывод данных в Python</h2>
+                    <p>В этом разделе мы изучим, как программа может взаимодействовать с пользователем: получать данные от пользователя и выводить информацию на экран.</p>
+                    
+                    <div class="theory-block">
+                        <h3>Функция print() - вывод данных</h3>
+                        <p>Функция <code>print()</code> используется для вывода информации на экран. В скобках мы указываем, что именно нужно вывести.</p>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># Простой вывод текста
+print("Привет, мир!")
+
+# Вывод нескольких значений
+print("Меня зовут", "Алексей", "и мне", 12, "лет")
+
+# Вычисление внутри print
+print("Сумма чисел 5 и 3 равна", 5 + 3)</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result1')">Показать результат</button>
+                            <div class="code-result" id="result1">
+                                Привет, мир!<br>
+                                Меня зовут Алексей и мне 12 лет<br>
+                                Сумма чисел 5 и 3 равна 8
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Функция input() - ввод данных</h3>
+                        <p>Функция <code>input()</code> позволяет получить данные от пользователя. Программа ждет, пока пользователь введет текст и нажмет Enter.</p>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># Простой ввод
+name = input("Как тебя зовут? ")
+print("Привет,", name)
+
+# Ввод числа (нужно преобразовать строку в число)
+age = int(input("Сколько тебе лет? "))
+print("Через 5 лет тебе будет", age + 5)</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result2')">Показать результат</button>
+                            <div class="code-result" id="result2">
+                                (После ввода "Алексей" и "12")<br>
+                                Привет, Алексей<br>
+                                Через 5 лет тебе будет 17
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Форматированный вывод</h3>
+                        <p>В Python есть несколько способов красиво форматировать вывод:</p>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python">name = "Мария"
+age = 13
+height = 155.5
+
+# 1. Через f-строки (Python 3.6+)
+print(f"Имя: {name}, Возраст: {age}, Рост: {height} см")
+
+# 2. Через метод format()
+print("Имя: {}, Возраст: {}, Рост: {} см".format(name, age, height))
+
+# 3. Через % (старый способ)
+print("Имя: %s, Возраст: %d, Рост: %.1f см" % (name, age, height))</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result3')">Показать результат</button>
+                            <div class="code-result" id="result3">
+                                Имя: Мария, Возраст: 13, Рост: 155.5 см<br>
+                                Имя: Мария, Возраст: 13, Рост: 155.5 см<br>
+                                Имя: Мария, Возраст: 13, Рост: 155.5 см
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 style="margin-top: 40px;">Практические задания</h2>
+                    
+                    <div class="task-card">
+                        <h4>Задание 1: Калькулятор возраста</h4>
+                        <p>Напишите программу, которая спрашивает у пользователя год его рождения и вычисляет, сколько лет ему будет в 2030 году.</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution1')">Показать решение</button>
+                        <div class="code-result" id="solution1">
+                            <pre><code class="language-python">birth_year = int(input("Введите ваш год рождения: "))
+age_in_2030 = 2030 - birth_year
+print("В 2030 году вам будет", age_in_2030, "лет")</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card">
+                        <h4>Задание 2: Конвертер температуры</h4>
+                        <p>Напишите программу, которая преобразует температуру из градусов Цельсия в Фаренгейты по формуле: F = C × 9/5 + 32</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution2')">Показать решение</button>
+                        <div class="code-result" id="solution2">
+                            <pre><code class="language-python">celsius = float(input("Введите температуру в градусах Цельсия: "))
+fahrenheit = celsius * 9/5 + 32
+print(f"{celsius}°C = {fahrenheit}°F")</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card">
+                        <h4>Задание 3: Личный дневник</h4>
+                        <p>Создайте программу, которая запрашивает у пользователя его имя, настроение и планы на день, а затем красиво выводит эту информацию.</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution3')">Показать решение</button>
+                        <div class="code-result" id="solution3">
+                            <pre><code class="language-python">name = input("Как тебя зовут? ")
+mood = input("Какое у тебя сегодня настроение? ")
+plans = input("Какие у тебя планы на сегодня? ")
+
+print("\n=== ЛИЧНЫЙ ДНЕВНИК ===")
+print(f"Имя: {name}")
+print(f"Настроение: {mood}")
+print(f"Планы: {plans}")
+print("=====================")</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-sidebar">
+                    <div class="course-sidebar-card">
+                        <h3>Материалы урока</h3>
+                        <ul class="features-list">
+                            <li>Функция print()</li>
+                            <li>Функция input()</li>
+                            <li>Форматированный вывод</li>
+                            <li>Преобразование типов</li>
+                        </ul>
+                        <div class="price">Бесплатный урок</div>
+                        <a href="#contacts" class="btn">Записаться на курс</a>
+                    </div>
+                    
+                    <div class="course-sidebar-card">
+                        <h3>Следующий урок</h3>
+                        <p><strong>Арифметические операции</strong></p>
+                        <p>Научимся решать математические задачи с помощью Python</p>
+                        <a href="python-arifm.html" class="btn">Перейти</a>
+                    </div>
+                    
+                    <div class="course-sidebar-card">
+                        <h3>Полезные ссылки</h3>
+                        <ul class="features-list">
+                            <li><a href="https://python.org" target="_blank">Официальный сайт Python</a></li>
+                            <li><a href="https://pythontutor.ru" target="_blank">Учебник Python для начинающих</a></li>
+                            <li><a href="https://replit.com" target="_blank">Онлайн-редактор кода</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SPECTRUM</h3>
+                    <p>Школа PROграммирования для детей от 8 лет. Готовим к экзаменам и профессиональному будущему через практику и научную деятельность.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Направления</h3>
+                    <ul>
+                        <li><a href="scratch.html">Scratch</a></li>
+                        <li><a href="gamedev-2d.html">GameDev 1-lvl</a></li>
+                        <li><a href="gamedev-3d.html">GameDev 2-lvl</a></li>
+                        <li><a href="python-algo.html">Python алгоритмический</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>г. Новомосковск, ул. Калинина, 17а</li>
+                        <li>spectrum71@ro.ru</li>
+                        <li>+7(999)783-82-71</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://t.me/news_spectrum">📢</a>
+                        <a href="https://vk.com/prospectrum">👥</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 SPECTRUM - Школа программирования для детей. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="to-top" id="toTop">
+        <span>↑</span>
+    </a>
+
+    <!-- Подключение библиотек -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        // Подсветка синтаксиса
+        hljs.highlightAll();
+        
+        // Кнопка "Наверх"
+        window.addEventListener('scroll', function() {
+            const toTopButton = document.getElementById('toTop');
+            if (window.pageYOffset > 300) {
+                toTopButton.classList.add('visible');
+            } else {
+                toTopButton.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('toTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Показать/скрыть результаты
+        function toggleResult(id) {
+            const result = document.getElementById(id);
+            if (result.style.display === 'block') {
+                result.style.display = 'none';
+                event.target.textContent = 'Показать результат';
+            } else {
+                result.style.display = 'block';
+                event.target.textContent = 'Скрыть результат';
+            }
+        }
+    </script>
+</body>
+</html>

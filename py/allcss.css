@@ -1,0 +1,621 @@
+
+@font-face {
+            font-family: 'Rubik';
+            src: url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(135deg, #001f56, #4f4796);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 54px;
+            font-weight: bold;
+            margin-left: 10px;
+            background: linear-gradient(135deg, #40bfef, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #40bfef;
+        }
+        
+        /* Герой-секция */
+        .hero {
+            background: linear-gradient(rgba(0, 31, 86, 0.8), rgba(79, 71, 150, 0.8)), url('pic/top_fon.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #40bfef;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #001f56;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* О школе */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #40bfef;
+            font-size: 36px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            color: #4f4796;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Направления */
+        .courses {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .course-card:hover .course-image img {
+            transform: scale(1.1);
+        }
+        
+        .course-info {
+            padding: 20px;
+        }
+        
+        .course-info h3 {
+            color: #001f56;
+            margin-bottom: 10px;
+        }
+        
+        .course-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #4f4796;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        /* Лаборатория */
+        .lab {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #001f56, #4f4796);
+            color: white;
+        }
+        
+        .lab-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .lab-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .lab-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .lab-text {
+            flex: 1;
+        }
+        
+        .lab-text h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        /* Контакты */
+        .contacts {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            background-color: #001f56;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .contact-card i {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #40bfef;
+        }
+        
+        .contact-card:hover i {
+            color: white;
+        }
+        
+        .contact-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* Подвал */
+        footer {
+            background-color: #001f56;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #40bfef;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #40bfef;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #40bfef;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .about-content, .lab-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+        }
+        
+        /* Стили для страниц направлений */
+        .course-page {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .course-header {
+            background: linear-gradient(rgba(0, 31, 86, 0.8), rgba(79, 71, 150, 0.8)), url('pic/top_fon.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .course-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        .course-header_scratch {
+            background: linear-gradient(rgba(0, 31, 86, 0.8), rgba(79, 71, 150, 0.8)), url('pic/scratch_top.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .course-header_scratch h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        
+        
+        .course-details {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .course-main {
+            flex: 2;
+        }
+        
+        .course-sidebar {
+            flex: 1;
+        }
+        
+        .course-sidebar-card {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .course-sidebar-card h3 {
+            color: #001f56;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .price {
+            font-size: 24px;
+            color: #4f4796;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .features-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #40bfef;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .course-details {
+                flex-direction: column;
+            }
+            
+            .course-header h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            
+            h3 {
+                font-size: 22px;
+            }
+        }
+
+ /* Оглавление курса */
+        .course-toc {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        
+        .toc-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .toc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .toc-card h3 {
+            color: #001f56;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #40bfef;
+        }
+        
+        .toc-card ul {
+            list-style: none;
+        }
+        
+        .toc-card li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .toc-card li:before {
+            content: "◈";
+            color: #4f4796;
+            position: absolute;
+            left: 0;
+        }
+        
+        .toc-card a {
+            color: #001f56;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: bolder;
+        }
+        
+        .toc-card a:hover {
+            color: #40bfef;
+        }
+        
+        /* Боковая панель */
+        .course-sidebar {
+            background-color: #f0f2f5;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .course-sidebar h3 {
+            color: #001f56;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .price {
+            font-size: 24px;
+            color: #4f4796;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #40bfef, #4f4796);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #4f4796, #001f56);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(64, 191, 239, 0.3);
+        }
+
+             /* Кнопка вверх */   
+           .to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #40bfef, #4f4796);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            }
+
+            .to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            }
+
+            .to-top:hover {
+            background: linear-gradient(135deg, #4f4796, #001f56);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(64, 191, 239, 0.4);
+            }
+
+            .to-top span {
+            font-size: 24px;
+            line-height: 1;
+            }

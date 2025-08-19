@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс Python | SPECTRUM</title>
+    <link rel="stylesheet" href="allcss.css">
+    
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="logo.png" alt="SPECTRUM" height="50">
+                <span class="logo-text">SPECTRUM</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#courses">Направления</a></li>
+                    <li><a href="index.html#lab">Лаборатория</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Заголовок курса -->
+    <section class="course-header">
+        <div class="container">
+            <h1>Программирование на Python</h1>
+            <p>Полный курс для начинающих от IT-школы SPECTRUM</p>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <main class="container">
+        <div class="course-description">
+            <h2>О курсе</h2>
+            <p>Этот курс познакомит вас с основами программирования на Python - одном из самых популярных языков в мире. Вы научитесь писать программы, работать с данными и решать реальные задачи.</p>
+            <p>Курс разработан специально для школьников 12-14 лет и включает 12 ключевых тем, от основ до более сложных концепций.</p>
+        </div>
+        
+        <h2>Содержание курса</h2>
+        <div class="course-toc">
+            <!-- Блок 1 -->
+            <div class="toc-card">
+                <h3>Основы Python</h3>
+                <ul>
+                    <li><a href="python-io.html">Ввод и вывод данных</a> - работа с input() и print()</li>
+                    <li><a href="python-arith.html">Арифметика</a> - операции с числами</li>
+                    <li><a href="python-conditions.html">Условные конструкции</a> - if, elif, else</li>
+                </ul>
+            </div>
+            
+            <!-- Блок 2 -->
+            <div class="toc-card">
+                <h3>Циклы и функции</h3>
+                <ul>
+                    <li><a href="python-for.html">Цикл с параметром</a> - for и range</li>
+                    <li><a href="python-while.html">Цикл с условием</a> - while</li>
+                    <li><a href="python-functions.html">Функции</a> - создание и использование</li>
+                </ul>
+            </div>
+            
+            <!-- Блок 3 -->
+            <div class="toc-card">
+                <h3>Работа с данными</h3>
+                <ul>
+                    <li><a href="python-strings.html">Строки и срезы</a> - обработка текста</li>
+                    <li><a href="python-string-methods.html">Методы и функции строк</a> - полезные инструменты</li>
+                    <li><a href="python-files.html">Работа с файлами</a> - чтение и запись</li>
+                </ul>
+            </div>
+            
+            <!-- Блок 4 -->
+            <div class="toc-card">
+                <h3>Продвинутые темы</h3>
+                <ul>
+                    <li><a href="python-errors.html">Обработка ошибок</a> - try/except</li>
+                    <li><a href="python-modules.html">Работа с модулями</a> - import</li>
+                    <li><a href="python-lists.html">Списки</a> - коллекции данных</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="course-sidebar">
+            <h3>Детали курса</h3>
+            <p><strong>Для кого:</strong> школьники 12-14 лет</p>
+            <p><strong>Длительность:</strong> 9 месяцев (34 занятия)</p>
+            <p><strong>Формат:</strong> 1 занятие в неделю по 2 академических часа</p>
+            <div class="price">25 000₽ за курс</div>
+            <p>или 3 000₽ в месяц</p>
+            <a href="http://spectrumcode.ru" class="btn">Записаться на курс</a>
+        </div>
+    </main>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="to-top" id="toTop">↑</a>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p>© 2023 SPECTRUM | Школа программирования для детей | Новомосковск</p>
+        </div>
+    </footer>
+
+    <script>
+        // Кнопка "Наверх"
+        window.addEventListener('scroll', function() {
+            const toTopButton = document.getElementById('toTop');
+            if (window.pageYOffset > 300) {
+                toTopButton.classList.add('visible');
+            } else {
+                toTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Плавная прокрутка при нажатии
+        document.getElementById('toTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

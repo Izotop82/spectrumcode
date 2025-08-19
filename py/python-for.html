@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Цикл for | SPECTRUM</title>
+    <link rel="stylesheet" href="allcss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <style>
+        .code-container {
+            position: relative;
+            margin: 20px 0;
+        }
+        .code-result {
+            display: none;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 0 0 5px 5px;
+            border-left: 4px solid #40bfef;
+            margin-top: -5px;
+        }
+        .show-result-btn {
+            background-color: #4f4796;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        .show-result-btn:hover {
+            background-color: #001f56;
+        }
+        .task-card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #40bfef;
+        }
+        .task-card h4 {
+            color: #001f56;
+            margin-bottom: 10px;
+        }
+        pre {
+            border-radius: 5px;
+            padding: 15px !important;
+        }
+        .theory-block {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        .theory-block h3 {
+            color: #4f4796;
+            margin-bottom: 15px;
+        }
+        .flowchart {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .flowchart img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .note-box {
+            background-color: #e6f7ff;
+            border-left: 4px solid #40bfef;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .iterable-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .iterable-table th, .iterable-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .iterable-table th {
+            background-color: #001f56;
+            color: white;
+        }
+        .iterable-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .iterable-table tr:hover {
+            background-color: #e6f7ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="SPECTRUM" height="70"></a>
+                <a href="index.html"><span class="logo-text">SPECTRUM</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index.html#courses">Направления</a></li>
+                    <li><a href="index.html#lab">Лаборатория</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="index.html#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Заголовок курса -->
+    <section class="course-header">
+        <div class="container">
+            <h1>Python: Цикл for</h1>
+            <p>Итерации по последовательностям и выполнение повторяющихся действий</p>
+        </div>
+    </section>
+
+    <!-- Основное содержание -->
+    <section class="course-page">
+        <div class="container">
+            <div class="course-details">
+                <div class="course-main">
+                    <h2>Цикл for в Python</h2>
+                    <p>Цикл for используется для итерации по элементам последовательности (список, строка, кортеж, словарь и др.) и выполнения повторяющихся действий.</p>
+                    
+                    <div class="theory-block">
+                        <h3>Базовый синтаксис цикла for</h3>
+                        <p>Цикл for в Python имеет следующий синтаксис:</p>
+                        
+                        <div class="flowchart">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/For-loop-diagram.png/500px-For-loop-diagram.png" alt="Блок-схема цикла for" width="300">
+                        </div>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># Простейший пример цикла for
+for i in range(5):
+    print(f"Итерация №{i}")
+
+print("Цикл завершен")</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result1')">Показать результат</button>
+                            <div class="code-result" id="result1">
+                                Итерация №0<br>
+                                Итерация №1<br>
+                                Итерация №2<br>
+                                Итерация №3<br>
+                                Итерация №4<br>
+                                Цикл завершен
+                            </div>
+                        </div>
+                        
+                        <div class="note-box">
+                            <strong>Важно:</strong> В Python цикл for отличается от цикла for в других языках программирования. Это скорее "цикл foreach", который проходит по элементам последовательности.
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Итерируемые объекты</h3>
+                        <p>Цикл for может работать с разными типами последовательностей:</p>
+                        
+                        <table class="iterable-table">
+                            <tr>
+                                <th>Тип</th>
+                                <th>Пример</th>
+                                <th>Результат итерации</th>
+                            </tr>
+                            <tr>
+                                <td>Строка</td>
+                                <td>"hello"</td>
+                                <td>По одному символу</td>
+                            </tr>
+                            <tr>
+                                <td>Список</td>
+                                <td>[1, 2, 3]</td>
+                                <td>По одному элементу</td>
+                            </tr>
+                            <tr>
+                                <td>Кортеж</td>
+                                <td>(4, 5, 6)</td>
+                                <td>По одному элементу</td>
+                            </tr>
+                            <tr>
+                                <td>Словарь</td>
+                                <td>{"a": 1, "b": 2}</td>
+                                <td>По ключам (или парам ключ-значение)</td>
+                            </tr>
+                            <tr>
+                                <td>range</td>
+                                <td>range(5)</td>
+                                <td>Числа в указанном диапазоне</td>
+                            </tr>
+                        </table>
+                        
+                        <div class="code-container" style="margin-top: 20px;">
+                            <pre><code class="language-python"># Примеры итерации по разным типам
+# Итерация по строке
+word = "Python"
+for letter in word:
+    print(letter)
+
+# Итерация по списку
+numbers = [10, 20, 30]
+for num in numbers:
+    print(num * 2)
+
+# Итерация по словарю
+grades = {"Маша": 5, "Петя": 4, "Вася": 3}
+for name in grades:
+    print(f"{name}: {grades[name]}")</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result2')">Показать результат</button>
+                            <div class="code-result" id="result2">
+                                P<br>y<br>t<br>h<br>o<br>n<br>
+                                20<br>40<br>60<br>
+                                Маша: 5<br>Петя: 4<br>Вася: 3
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Функция range()</h3>
+                        <p><code>range()</code> создает последовательность чисел, часто используемую в циклах for:</p>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># range(stop) - от 0 до stop-1
+for i in range(5):
+    print(i)
+
+# range(start, stop) - от start до stop-1
+for i in range(3, 7):
+    print(i)
+
+# range(start, stop, step) - с шагом step
+for i in range(0, 10, 2):
+    print(i)
+
+# Отрицательный шаг
+for i in range(5, 0, -1):
+    print(i)</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result3')">Показать результат</button>
+                            <div class="code-result" id="result3">
+                                0<br>1<br>2<br>3<br>4<br>
+                                3<br>4<br>5<br>6<br>
+                                0<br>2<br>4<br>6<br>8<br>
+                                5<br>4<br>3<br>2<br>1
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Вложенные циклы</h3>
+                        <p>Циклы могут содержать другие циклы внутри себя:</p>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># Таблица умножения
+for i in range(1, 6):
+    for j in range(1, 6):
+        print(f"{i} x {j} = {i * j}")
+    print()  # Пустая строка между таблицами</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result4')">Показать результат</button>
+                            <div class="code-result" id="result4">
+                                1 x 1 = 1<br>1 x 2 = 2<br>1 x 3 = 3<br>1 x 4 = 4<br>1 x 5 = 5<br><br>
+                                2 x 1 = 2<br>2 x 2 = 4<br>2 x 3 = 6<br>2 x 4 = 8<br>2 x 5 = 10<br><br>
+                                3 x 1 = 3<br>3 x 2 = 6<br>3 x 3 = 9<br>3 x 4 = 12<br>3 x 5 = 15<br><br>
+                                4 x 1 = 4<br>4 x 2 = 8<br>4 x 3 = 12<br>4 x 4 = 16<br>4 x 5 = 20<br><br>
+                                5 x 1 = 5<br>5 x 2 = 10<br>5 x 3 = 15<br>5 x 4 = 20<br>5 x 5 = 25<br><br>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="theory-block">
+                        <h3>Операторы break и continue</h3>
+                        <p><code>break</code> - досрочно прерывает выполнение цикла<br>
+                        <code>continue</code> - пропускает текущую итерацию и переходит к следующей</p>
+                        
+                        <div class="code-container">
+                            <pre><code class="language-python"># Пример break - поиск первого четного числа
+numbers = [1, 3, 5, 6, 7, 9, 10]
+for num in numbers:
+    if num % 2 == 0:
+        print(f"Найдено четное число: {num}")
+        break
+    print(f"Проверяем {num}")
+
+# Пример continue - печать только нечетных чисел
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)</code></pre>
+                            <button class="show-result-btn" onclick="toggleResult('result5')">Показать результат</button>
+                            <div class="code-result" id="result5">
+                                Проверяем 1<br>Проверяем 3<br>Проверяем 5<br>Найдено четное число: 6<br>
+                                1<br>3<br>5<br>7<br>9
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 style="margin-top: 40px;">Практические задания</h2>
+                    
+                    <div class="task-card">
+                        <h4>Задание 1: Сумма чисел</h4>
+                        <p>Напишите программу, которая:<br>
+                        1. Запрашивает у пользователя число N<br>
+                        2. Вычисляет сумму всех чисел от 1 до N<br>
+                        3. Выводит результат</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution1')">Показать решение</button>
+                        <div class="code-result" id="solution1">
+                            <pre><code class="language-python">n = int(input("Введите число N: "))
+total = 0
+
+for i in range(1, n + 1):
+    total += i
+
+print(f"Сумма чисел от 1 до {n} равна {total}")</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card">
+                        <h4>Задание 2: Поиск простых чисел</h4>
+                        <p>Напишите программу, которая:<br>
+                        1. Запрашивает у пользователя число N<br>
+                        2. Находит все простые числа меньше N<br>
+                        3. Выводит их в одну строку через запятую</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution2')">Показать решение</button>
+                        <div class="code-result" id="solution2">
+                            <pre><code class="language-python">n = int(input("Введите число N: "))
+primes = []
+
+for num in range(2, n):
+    is_prime = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        primes.append(str(num))
+
+print("Простые числа:", ", ".join(primes))</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="task-card">
+                        <h4>Задание 3: Рисуем фигуры</h4>
+                        <p>Напишите программу, которая:<br>
+                        1. Запрашивает у пользователя размер фигуры (число N)<br>
+                        2. Рисует прямоугольный треугольник из звездочек:<br>
+                        *<br>
+                        **<br>
+                        ***<br>
+                        ... (N строк)</p>
+                        <button class="show-result-btn" onclick="toggleResult('solution3')">Показать решение</button>
+                        <div class="code-result" id="solution3">
+                            <pre><code class="language-python">n = int(input("Введите размер фигуры: "))
+
+for i in range(1, n + 1):
+    print('*' * i)</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-sidebar">
+                    <div class="course-sidebar-card">
+                        <h3>Материалы урока</h3>
+                        <ul class="features-list">
+                            <li>Синтаксис цикла for</li>
+                            <li>Итерируемые объекты</li>
+                            <li>Функция range()</li>
+                            <li>Вложенные циклы</li>
+                            <li>Операторы break и continue</li>
+                        </ul>
+                        <div class="price">Бесплатный урок</div>
+                        <a href="#contacts" class="btn">Записаться на курс</a>
+                    </div>
+                    
+                    <div class="course-sidebar-card">
+                        <h3>Следующий урок</h3>
+                        <p><strong>Цикл while</strong></p>
+                        <p>Изучаем циклы с условием выполнения</p>
+                        <a href="python-while.html" class="btn">Перейти</a>
+                    </div>
+                    
+                    <div class="course-sidebar-card">
+                        <h3>Полезные ссылки</h3>
+                        <ul class="features-list">
+                            <li><a href="https://python.org" target="_blank">Официальный сайт Python</a></li>
+                            <li><a href="https://pythontutor.ru" target="_blank">Учебник Python для начинающих</a></li>
+                            <li><a href="https://replit.com" target="_blank">Онлайн-редактор кода</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SPECTRUM</h3>
+                    <p>Школа PROграммирования для детей от 8 лет. Готовим к экзаменам и профессиональному будущему через практику и научную деятельность.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Направления</h3>
+                    <ul>
+                        <li><a href="scratch.html">Scratch</a></li>
+                        <li><a href="gamedev-2d.html">GameDev 1-lvl</a></li>
+                        <li><a href="gamedev-3d.html">GameDev 2-lvl</a></li>
+                        <li><a href="python-algo.html">Python алгоритмический</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>г. Новомосковск, ул. Калинина, 17а</li>
+                        <li>spectrum71@ro.ru</li>
+                        <li>+7(999)783-82-71</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://t.me/news_spectrum">📢</a>
+                        <a href="https://vk.com/prospectrum">👥</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 SPECTRUM - Школа программирования для детей. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="to-top" id="toTop">
+        <span>↑</span>
+    </a>
+
+    <!-- Подключение библиотек -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>
+        // Подсветка синтаксиса
+        hljs.highlightAll();
+        
+        // Кнопка "Наверх"
+        window.addEventListener('scroll', function() {
+            const toTopButton = document.getElementById('toTop');
+            if (window.pageYOffset > 300) {
+                toTopButton.classList.add('visible');
+            } else {
+                toTopButton.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('toTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Показать/скрыть результаты
+        function toggleResult(id) {
+            const result = document.getElementById(id);
+            if (result.style.display === 'block') {
+                result.style.display = 'none';
+                event.target.textContent = 'Показать результат';
+            } else {
+                result.style.display = 'block';
+                event.target.textContent = 'Скрыть результат';
+            }
+        }
+    </script>
+</body>
+</html>
