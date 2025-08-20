@@ -93,9 +93,66 @@
         </section>
     </main>
 
+ <!-- Подвал -->
     <footer>
-        <!-- Подвал из главной страницы -->
-        <!-- ... -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>SPECTRUM</h3>
+                    <p>Школа PROграммирования для детей от 8 лет. Готовим к экзаменам и профессиональному будущему через практику и научную деятельность.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Направления</h3>
+                    <ul>
+                        <li><a href="scratch.html">Scratch</a></li>
+                        <li><a href="gamedev-2d.html">GameDev 1-lvl</a></li>
+                        <li><a href="gamedev-3d.html">GameDev 2-lvl</a></li>
+                        <li><a href="python-algo.html">Python алгоритмический</a></li>
+                        <li><a href="python-prod.html">Python продуктовый</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>г. Новомосковск, ул. Калинина, 17а</li>
+                        <li>spectrum71@ro.ru</li>
+                        <li>+7(999)783-82-71</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://t.me/news_spectrum">📢</a>
+                        <a href="https://vk.com/prospectrum">👥</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 SPECTRUM - Школа программирования для детей. Все права защищены.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="to-top" id="toTop">
+    <span>↑</span>
+    </a>
+    <script>
+    // Кнопка "Наверх"
+    window.addEventListener('scroll', function() {
+        const toTopButton = document.getElementById('toTop');
+        if (window.pageYOffset > 300) {
+        toTopButton.classList.add('visible');
+        } else {
+        toTopButton.classList.remove('visible');
+        }
+    });
+
+    // Плавная прокрутка при нажатии
+    document.getElementById('toTop').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        });
+    });
+    </script>
 </body>
 </html>
